@@ -1,11 +1,17 @@
 import React from "react";
+import Card from "../editor/Card";
 import styles from "./preview.module.css";
 
-function Preview() {
+function Preview({ cards }) {
   return (
-    <div className={styles.preview}>
+    <section className={styles.preview}>
       <h1 className={styles.title}>Life Preview</h1>
-    </div>
+      <ul className={styles.cards}>
+        {cards.map((card) => (
+          <Card card={card} />
+        ))}
+      </ul>
+    </section>
   );
 }
 
